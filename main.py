@@ -20,7 +20,7 @@ for _ in range(num_epochs):
     x, y = customData.get_data()
     x = x.reshape(100, 2, 1)
 
-    model.fit(x, y, epochs=1, batch_size=1, verbose=2)
+    model.fit(x, y, epochs=30, batch_size=32, verbose=2)
 
 print("Train Fin!")
 

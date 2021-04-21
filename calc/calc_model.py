@@ -1,7 +1,7 @@
 from tensorflow.keras import layers
 from tensorflow import keras
 
-class Plus:
+class Calc:
     def __init__(self):
         pass
 

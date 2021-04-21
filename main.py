@@ -1,7 +1,4 @@
-from calc.plus_model import Plus
-from calc.minus_model import Minus
-from calc.multiply_model import Multiply
-from calc.divide_model import Divide
+from calc.calc_model import Calc
 import random
 import numpy as np
 from calc.get_data import GetData
@@ -9,12 +6,12 @@ from calc.get_data import GetData
 def mean_squared_error(t_val, p_val):
     return np.square(np.subtract(t_val, p_val)).mean()
 
-calc_sign = "+"
+calc_sign = "*"
 
-num_epochs = 100
+num_epochs = 1000
 all_scores = []
 
-model = Plus()
+model = Calc()
 model = model.build_model()
 #model.summary()
 
@@ -49,5 +46,5 @@ print("aver Err : {}".format(err_sum/len(exp)))
     
 
 dic = {"+":"plus", "-":"minus", "*":"multiply", "/":"divide"}
-model.save(dic[calc_sign]+'_model.h5')
+model.save('.pretrained/' + dic[calc_sign]+'_model.h5')
 
